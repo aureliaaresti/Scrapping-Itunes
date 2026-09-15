@@ -77,5 +77,4 @@ disimpan ke CSV.
   (di luar cakupan `requests` + `BeautifulSoup` dasar — solusinya perlu tool
   tambahan seperti Selenium, tidak dicakup di script ini).
 
-## Anggota kelompok
-_(isi nama anggota kelompok di sini)_
+
