@@ -4,11 +4,10 @@ Target: iTunes Search API (music.apple.com)
 Metode: API scraping (JSON) + HTTP/HTML scraping (BeautifulSoup)
 Minimal 10 halaman untuk masing-masing metode.
 
-Cara pakai:
-    pip install requests beautifulsoup4 pandas
-    python itunes_scraping.py
-
-Atau copy tiap blok (dipisah komentar "CELL n") ke cell terpisah di Google Colab / Jupyter Notebook.
+Kelompok 10
+Aurelia Resti Mardhani_255
+Firda Ayla Mutiahadi_256
+Daanya Kirana Arifa_272
 """
 
 import requests
@@ -17,9 +16,6 @@ import pandas as pd
 import time
 
 
-# ============================================
-# CELL 1: Keyword pencarian (bisa diganti sesuai topik kelompok)
-# ============================================
 keywords = [
     'bruno major',
     'taylor swift',
@@ -33,11 +29,6 @@ keywords = [
     'pamungkas'
 ]
 
-
-# ============================================
-# CELL 2: BAGIAN API - request ke iTunes Search API (JSON)
-# Setiap keyword = 1 request API = 1 "halaman" API
-# ============================================
 def scrape_api(keywords):
     song_list = []
 
@@ -66,10 +57,7 @@ def scrape_api(keywords):
     return song_list
 
 
-# ============================================
-# CELL 3: BAGIAN HTTP/HTML - scrape halaman detail tiap lagu
-# Setiap lagu = 1 halaman HTML berbeda = total 10 halaman
-# ============================================
+
 def scrape_html(song_list):
     hasil_html = []
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
@@ -113,9 +101,6 @@ def scrape_html(song_list):
     return hasil_html
 
 
-# ============================================
-# CELL 4: Gabungin data API + HTML, simpan ke CSV
-# ============================================
 def main():
     song_list = scrape_api(keywords)
     df_api = pd.DataFrame(song_list)
